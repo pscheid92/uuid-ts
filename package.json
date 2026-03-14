@@ -1,0 +1,49 @@
+{
+	"name": "@pscheid92/uuid",
+	"version": "0.1.0",
+	"description": "RFC 9562 UUID generation and parsing (V4, V5, V7, V8)",
+	"license": "MIT",
+	"author": "Patrick Scheid <p.scheid92@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pscheid92/uuid-ts.git"
+	},
+	"keywords": [
+		"uuid",
+		"rfc9562",
+		"v4",
+		"v5",
+		"v7",
+		"v8",
+		"unique",
+		"identifier"
+	],
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "tsc",
+		"check": "biome check",
+		"format": "biome check --write",
+		"prepublishOnly": "npm run check && npm test && npm run build",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"files": [
+		"dist",
+		"LICENSE"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.7",
+		"@types/node": "^25.5.0",
+		"@vitest/coverage-v8": "^3.2.4",
+		"typescript": "^5.7.0",
+		"vitest": "^3.0.0"
+	}
+}
